@@ -1,0 +1,37 @@
+.shadow{
+    /*border: 1px solid #ccc;*/
+    box-shadow: #bbb 0px 1px 4px;
+}
+.agile-column{
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 0 !important;
+}
+.agile-header{
+    background-color: #b8daff;
+    text-align: center;
+    padding: 10px 25px;
+}
+.agile-body{
+    padding: 15px 25px 50px;
+}
+.agile-ticket{
+    color: #000000;
+    display: block;
+    background-color: #ffdb11;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.agile-ticket:hover{
+    color: #000000;
+    background-color: #ffd20c;
+    text-decoration: none;
+}
+.btn-add{
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 15px;
+}
+h1{
+    padding-bottom: 10px;
+}
