@@ -23,7 +23,6 @@ dist/
 nbdist/
 .nb-gradle/
 
-src/main/resources/static/build/
 node_modules/
 old/
 npm-*.log
