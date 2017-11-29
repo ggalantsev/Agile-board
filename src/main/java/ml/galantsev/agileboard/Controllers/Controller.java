@@ -7,7 +7,7 @@ public class Controller {
 
     @RequestMapping("/")
     public String index(){
-        return "redirect:/login/";
+        return "redirect:/dashboard/";
     }
 
     @RequestMapping("/login")
