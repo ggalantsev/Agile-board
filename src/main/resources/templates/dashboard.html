@@ -10,7 +10,10 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-light shadow float-right" href="/logout">Sign out</a>
+    <div class="sign-out">
+        <span class="username" th:utext="${#httpServletRequest.remoteUser}">user</span>
+        <a class="btn btn-light btn-sm shadow" href="/logout">Sign out</a>
+    </div>
     <h1>Agile board</h1>
     <div class="clearfix"></div>
     <div class="row shadow">
@@ -33,25 +36,26 @@
             </div>
         </div>
     </div>
+    <div id="update"></div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="addTicket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!-- Modals -->
+<div class="modal fade" id="addTicket" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div id="ticketModalContent"/>
+        <div id="ticketModalAdd"></div>
+    </div>
+</div>
+<div class="modal fade" id="editTicket" tabindex="-1" role="dialog" aria-labelledby="Modal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div id="ticketModalEdit"></div>
     </div>
 </div>
 
 <script src="built/bundle.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </body>
 </html>
