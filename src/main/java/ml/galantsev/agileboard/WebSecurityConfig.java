@@ -17,8 +17,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN") // Allow create and edit only for Admin
                 .antMatchers(HttpMethod.PATCH, "/api/**").hasRole("ADMIN")
-                .antMatchers("/api/**", "/built/**", "/dashboard/**").access("hasRole('ADMIN') or hasRole('USER')")
-                .antMatchers("/", "/css/**").permitAll()
+                .antMatchers("/api/**", "/dashboard/**").access("hasRole('ADMIN') or hasRole('USER')")
+                .antMatchers("/", "/css/**", "/built/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
