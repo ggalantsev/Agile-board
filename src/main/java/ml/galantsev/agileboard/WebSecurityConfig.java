@@ -35,6 +35,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        // In memory authentication for demo purposes.
+        // If needed - can do DB authentication with password encoding.
         auth.inMemoryAuthentication().withUser("admin").password("pass").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("user").password("pass").roles("USER");
     }
