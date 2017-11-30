@@ -195,6 +195,7 @@ class TicketModalEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {ticket:this.props.ticket, value:""};
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillMount() {
@@ -251,11 +252,11 @@ class TicketModalEdit extends React.Component {
                         <div className="row">
                             <div className="form-group col-md">
                                 <label htmlFor="name">Name</label>
-                                <input type="text" className="form-control" id="name-edit" value={this.state.ticket.name} onChange={this.handleChange}/>
+                                <input type="text" className="form-control" id="name-edit" defaultValue={this.state.ticket.name} onChange={this.handleChange}/>
                             </div>
                             <div className="form-group col-md">
                                 <label htmlFor="status">Status</label>
-                                <select className="form-control" id="status-edit" value={this.state.ticket.status} onChange={this.handleChange}>
+                                <select className="form-control" id="status-edit" defaultValue={this.state.ticket.status} onChange={this.handleChange}>
                                     <option value="TODO">To do</option>
                                     <option value="IN_PROGRESS">In progress</option>
                                     <option value="DONE">Done</option>
@@ -264,7 +265,7 @@ class TicketModalEdit extends React.Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="description">Description</label>
-                            <textarea className="form-control" id="description-edit" rows="3" value={this.state.ticket.description} onChange={this.handleChange}/>
+                            <textarea className="form-control" id="description-edit" rows="3" defaultValue={this.state.ticket.description} onChange={this.handleChange}/>
                         </div>
                     </form>
                 </div>
