@@ -159,7 +159,7 @@ class TicketModalAdd extends React.Component {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <form method="POST" action="/api/tickets/" content="application/json">
+                    <form method="POST" action="#" content="application/json">
                         <div className="row">
                             <div className="form-group col-md">
                                 <label htmlFor="name">Name</label>
@@ -223,10 +223,10 @@ class TicketModalEdit extends React.Component {
         let xhr = new XMLHttpRequest();
         let url = this.state.ticket._links.self.href;
         let statusOld = this.state.ticket.status;
-        let statusOptions = document.getElementById("status");
+        let statusOptions = document.getElementById("status-edit");
         let status = statusOptions.options[statusOptions.selectedIndex].value;
-        let name = document.getElementById("name").value;
-        let description = document.getElementById("description").value;
+        let name = document.getElementById("name-edit").value;
+        let description = document.getElementById("description-edit").value;
         xhr.open("PATCH", url, true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () {
@@ -247,15 +247,15 @@ class TicketModalEdit extends React.Component {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <form method="PATCH" action="/api/tickets/ticketID" content="application/json">
+                    <form method="PATCH" action="#" content="application/json">
                         <div className="row">
                             <div className="form-group col-md">
                                 <label htmlFor="name">Name</label>
-                                <input type="text" className="form-control" id="name" value={this.state.ticket.name} onChange={this.handleChange}/>
+                                <input type="text" className="form-control" id="name-edit" value={this.state.ticket.name} onChange={this.handleChange}/>
                             </div>
                             <div className="form-group col-md">
                                 <label htmlFor="status">Status</label>
-                                <select className="form-control" id="status" value={this.state.ticket.status} onChange={this.handleChange}>
+                                <select className="form-control" id="status-edit" value={this.state.ticket.status} onChange={this.handleChange}>
                                     <option value="TODO">To do</option>
                                     <option value="IN_PROGRESS">In progress</option>
                                     <option value="DONE">Done</option>
@@ -264,7 +264,7 @@ class TicketModalEdit extends React.Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="description">Description</label>
-                            <textarea className="form-control" id="description" rows="3" value={this.state.ticket.description} onChange={this.handleChange}/>
+                            <textarea className="form-control" id="description-edit" rows="3" value={this.state.ticket.description} onChange={this.handleChange}/>
                         </div>
                     </form>
                 </div>
